@@ -336,7 +336,7 @@ header {
 }
 
 .text-zone h1 span:hover, 
-.my-portfolio span:hover {
+.my-portfolio span .char:hover {
   color: #08fdd8;
   -webkit-animation-name: rubberBand;
   animation-name: rubberBand;
@@ -763,6 +763,9 @@ header {
 .contact-heading #header {
   margin-bottom: 50px;
 }
+.contact-heading #header h2 {
+  position: relative;
+}
 .contact-heading #header h2::before {
   content: "<h2>";
   position: absolute;
@@ -785,12 +788,13 @@ header {
 }
 .contact-heading p {
   margin-bottom: 60px;
+  position: relative;
 }
 .contact-heading p::before {
   content: "<p>";
   position: absolute;
-  top: 88px;
-  left: -12px;
+  top: -26px;
+  left: -16px;
   font-size: 1.2rem;
   font-family: "La Belle Aurore", cursive;
   color: #666565;
@@ -799,8 +803,8 @@ header {
 .contact-heading p::after {
   content: "</p>";
   position: absolute;
-  top: 151px;
-  left: -12px;
+  top: 32px;
+  left: -16px;
   font-size: 1.2rem;
   font-family: "La Belle Aurore", cursive;
   color: #666565;
@@ -888,7 +892,7 @@ header {
 }
 
 .google-map {
-  width: 100%;
+  width: 95%;
   position: relative;
 }
 .google-map iframe {
@@ -992,7 +996,7 @@ header {
   }
 
   .aside {
-    width: 10%;
+    width: 180px;
 
     height: 100%;
   }
@@ -1081,30 +1085,30 @@ header {
         -ms-transform: scale3d(1, 1, 1);
         transform: scale3d(1, 1, 1)
     }
-}
+  }
+  .bounceIn {
+      -webkit-animation-name: bounceIn;
+      animation-name: bounceIn;
+      -webkit-animation-duration: .75s;
+      animation-duration: .75s
+  }
+  .section-home.loaded .text-zone>* {
+    opacity: 1
+  }
+  .blast, .char {
+    opacity: 0;
+    display: inline-block;
+    -webkit-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+  }
+  .section-home.loaded {
+    -webkit-transform: translateY(0px);
+    -ms-transform: translateY(0px);
+    transform: translateY(0px)
+  }
 
-.bounceIn {
-    -webkit-animation-name: bounceIn;
-    animation-name: bounceIn;
-    -webkit-animation-duration: .75s;
-    animation-duration: .75s
-}
-.section-home.loaded .text-zone>* {
-  opacity: 1
-}
-.blast {
-  opacity: 0;
-  display: inline-block;
-  -webkit-transition: all 0.3s ease-out;
-  -o-transition: all 0.3s ease-out;
-  transition: all 0.3s ease-out
-}
-.section-home.loaded {
-  -webkit-transform: translateY(0px);
-  -ms-transform: translateY(0px);
-  transform: translateY(0px)
-}
-  .text-zone h1 {
+ .text-zone h1 {
     font-size: 6.3rem;
 
     line-height: 85px;
@@ -1215,6 +1219,7 @@ header {
 
   #header .my-portfolio {
     margin-bottom: 20px;
+    position: relative;
   }
 
   #header .my-portfolio::before {
@@ -1222,9 +1227,9 @@ header {
 
     position: absolute;
 
-    top: 56px;
+    top: -16px;
 
-    left: 6px;
+    left: -16px;
 
     font-size: 1rem;
 
@@ -1240,9 +1245,9 @@ header {
 
     position: absolute;
 
-    top: 144px;
+    top: 64px;
 
-    left: 6px;
+    left: -16px;
 
     font-size: 1rem;
 
@@ -1265,6 +1270,7 @@ header {
     font-size: 14px;
 
     line-height: 1.5rem;
+    position: relative;
   }
 
   .text-zone-2 .text-zone-2__content::before {
@@ -1272,9 +1278,9 @@ header {
 
     position: absolute;
 
-    top: 186px;
+    top: -16px;
 
-    left: 6px;
+    left: -16px;
 
     font-size: 1rem;
 
@@ -1290,9 +1296,9 @@ header {
 
     position: absolute;
 
-    top: 280px;
+    top: 70px;
 
-    left: 6px;
+    left: -16px;
 
     font-size: 1rem;
 
@@ -1329,16 +1335,19 @@ header {
     flex-direction: row;
 
     padding-left: 15rem;
+    position: relative;
   }
-
-  #section-about::before {
+  #home-magicwall {
+    position: relative;
+  }
+  #home-magicwall::before {
     content: "<section>";
 
     position: absolute;
 
-    top: -837px;
+    top: -26px;
 
-    left: 207px;
+    left: 0px;
 
     font-size: 1rem;
 
@@ -1349,14 +1358,14 @@ header {
     letter-spacing: 3px;
   }
 
-  #section-about::after {
+  #home-magicwall::after {
     content: "<section>";
 
     position: absolute;
 
-    top: -94px;
+    top: 706px;
 
-    left: 207px;
+    left: 0px;
 
     font-size: 1rem;
 
@@ -1378,15 +1387,17 @@ header {
   .text-zone3 p {
     width: 600px;
   }
-
+  .header-title {
+    position: relative;
+  }
   .text-zone3 .header-title::before {
     content: "<h2>";
 
     position: absolute;
 
-    top: 68px;
+    top: -40px;
 
-    left: 223px;
+    left: -16px;
 
     font-size: 1rem;
 
@@ -1402,9 +1413,9 @@ header {
 
     position: absolute;
 
-    top: 150px;
+    top: 42px;
 
-    left: 223px;
+    left: -16px;
 
     font-size: 1rem;
 
@@ -1414,15 +1425,17 @@ header {
 
     letter-spacing: 3px;
   }
-
+  #section-about .header-content {
+    position: relative;
+  }
   #section-about .header-content::before {
     content: "<p>";
 
     position: absolute;
 
-    top: 218px;
+    top: -16px;
 
-    left: 223px;
+    left: -16px;
 
     font-size: 1rem;
 
@@ -1432,15 +1445,17 @@ header {
 
     letter-spacing: 3px;
   }
-
+  #section-about .header-content__last {
+    position: relative;
+  }
   #section-about .header-content__last::before {
     content: "<p>";
 
     position: absolute;
 
-    top: 480px;
+    top: 44px;
 
-    left: 223px;
+    left: -16px;
 
     font-size: 1rem;
 
@@ -1560,7 +1575,7 @@ header {
 
   .contact-form {
     width: 710px;
-    margin: 0 0 0 auto;
+    margin: 0 0 0 200px;
     padding: 0 17px;
   }
 
@@ -1581,7 +1596,7 @@ header {
     content: "<form>";
     position: absolute;
     top: -26px;
-    left: -12px;
+    left: -16px;
     font-size: 1rem;
     font-family: "La Belle Aurore", cursive;
     color: #666565;
@@ -1591,7 +1606,7 @@ header {
     content: "</form>";
     position: absolute;
     top: 500px;
-    left: -12px;
+    left: -16px;
     font-size: 1rem;
     font-family: "La Belle Aurore", cursive;
     color: #666565;

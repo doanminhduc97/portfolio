@@ -32,7 +32,7 @@
           });
   
           //my work destroy
-          jQuery.colorbox.remove();
+          window.jQuery.colorbox.remove();
   
           //skills destroy
           document.querySelector('script#tagcanvas').remove();
@@ -52,10 +52,26 @@
               home.waypoints.push(new Waypoint({
                   element: el,
                   handler: function(direction) {
-  
                       //initializes particular section initSection_work etc..
-                      home['initSection_'+jQuery(this.element).attr('data-load')]();
-  
+                    //   home['initSection_' + window.jQuery(this.element).attr('data-load')]();
+                    console.log('data', window.jQuery(this.element).attr('data-load'));
+                    switch (window.jQuery(this.element).attr('data-load')) {
+                        // console.log();
+                        case 'about':
+                            home.initSection_about();
+                            break;
+                        case 'work':
+                            home.initSection_work();
+                            break;
+                        case 'contact':
+                            home.initSection_contact();
+                            break;
+                        default:
+                            break;
+                    }
+                      if (window.jQuery(this.element).attr('data-load') === 'about') {
+                        home.initSection_about();
+                      }
                       this.destroy();
   
                   },
@@ -67,7 +83,7 @@
       },
       initSection_home:function () {
   
-          var sectionHome = document.querySelector('#section-home');
+          var sectionHome = window.jQuery('#section-home');
   
             console.log("sectionHome", sectionHome);
         //   if(jQuery(window).width() > 768) {
@@ -129,10 +145,10 @@
   
               sectionHome.find(".blast").mouseenter(function (){
   
-                  var el = document.querySelector(this);
+                  var el = window.jQuery(this);
   
-                  document.querySelector(this).addClass('animated rubberBand');
-                  document.querySelector(this).one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+                  window.jQuery(this).addClass('animated rubberBand');
+                  window.jQuery(this).one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
   
                       el.removeClass('animated rubberBand');
   
@@ -141,10 +157,125 @@
               });
   
           },3000);
-  
-  
       },
-  
+      initSection_work:function(){
+
+        var sectionWork = window.jQuery('#section-work');
+
+        var a = 0;
+
+        sectionWork.find(".word .char").each(function(){
+
+            var el = window.jQuery(this);
+
+            setTimeout(function(){
+                el.addClass('animated bounceIn');
+
+            },a);
+
+            a = a + 180;
+        });
+
+
+        setTimeout(function(){
+
+            sectionWork.find(".word .char").removeClass('animated bounceIn');
+            sectionWork.find(".word .char").css('opacity',1);
+
+            sectionWork.find(".word .char").mouseenter(function (){
+
+                var el = window.jQuery(this);
+
+                window.jQuery(this).addClass('animated rubberBand');
+                window.jQuery(this).one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+
+                    el.removeClass('animated rubberBand');
+
+                });
+
+            });
+
+
+        },2000);
+      },
+
+      initSection_about: function() {
+        var sectionAbout = window.jQuery('#section-about');
+
+        var a = 0;
+
+        sectionAbout.find(".word .char").each(function(){
+
+            var el = window.jQuery(this);
+
+            setTimeout(function(){
+                el.addClass('animated bounceIn');
+
+            },a);
+
+            a = a + 80;
+        });
+        setTimeout(function(){
+
+            sectionAbout.find(".word .char").removeClass('animated bounceIn');
+            sectionAbout.find(".word .char").css('opacity',1);
+
+            sectionAbout.find(".word .char").mouseenter(function (){
+
+                var el = window.jQuery(this);
+
+                window.jQuery(this).addClass('animated rubberBand');
+                window.jQuery(this).one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+
+                    el.removeClass('animated rubberBand');
+
+                });
+
+            });
+
+
+        },2000);
+      },
+      initSection_contact:function(){
+
+        var sectionContact = window.jQuery('#section-contact');
+
+        var a = 0;
+
+        sectionContact.find(".word .char").each(function(){
+
+            var el = window.jQuery(this);
+
+            setTimeout(function(){
+                el.addClass('animated bounceIn');
+
+            },a);
+
+            a = a + 80;
+        });
+
+
+        setTimeout(function(){
+
+            sectionContact.find(".word .char").removeClass('animated bounceIn');
+            sectionContact.find(".word .char").css('opacity',1);
+
+            sectionContact.find(".word .char").mouseenter(function (){
+
+                var el = window.jQuery(this);
+
+                window.jQuery(this).addClass('animated rubberBand');
+                window.jQuery(this).one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+
+                    el.removeClass('animated rubberBand');
+
+                });
+
+            });
+
+
+        },2000);
+    }
   }
 
   let div = home.init();

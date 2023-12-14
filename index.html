@@ -103,13 +103,13 @@
         <span class="bodyTag"></span>
 
         <h1 id="section-home-h1" style="letter-spacing: 3px;">
-          <span>H</span><span>i</span><span>,</span><br />
+          <span class="blast">H</span><span class="blast">i</span><span class="blast">,</span><br />
 
-          <span>I</span><span>'</span><span>m</span>
-          <span>F</span><span>i</span><span>n</span><span>n</span>
-          <span>L</span><span>i</span><span>a</span><span>m</span><span>,</span><br />
-          <span>W</span><span>e</span><span>b</span>
-          <span>d</span><span>e</span><span>v</span><span>e</span><span>l</span><span>o</span><span>p</span><span>e</span><span>r</span>
+          <span class="blast">I</span><span class="blast">'</span><span class="blast">m</span>
+          <span class="blast">F</span><span class="blast">i</span><span class="blast">n</span><span class="blast">n</span>
+          <span class="blast">L</span><span class="blast">i</span><span class="blast">a</span><span class="blast">m</span><span class="blast">,</span><br />
+          <span class="blast">W</span><span class="blast">e</span><span class="blast">b</span>
+          <span class="blast">d</span><span class="blast">e</span><span class="blast">v</span><span class="blast">e</span><span class="blast">l</span><span class="blast">o</span><span class="blast">p</span><span class="blast">e</span><span class="blast">r</span>
          
         </h1>
 
@@ -145,24 +145,21 @@
 
     <!-- part 2 starts here  -->
 
-    <!-- part 2 starts here  -->
-
-    <!-- part 2 starts here  -->
-
-    <section id="section-work">
+    <section id="section-work" data-load="work" class="section-work js-way">
       <div id="header">
         <h2 class="my-portfolio" data-splitting>
-          <span>M</span>
-          <span>y </span>
-          <span>P</span>
-          <span>o</span>
-          <span>r</span>
-          <span>t</span>
-          <span>f</span>
-          <span>o</span>
-          <span>l</span>
-          <span>i</span>
-          <span>o</span>
+          My Portfolio
+          <!-- <span class="blast">M</span>
+          <span class="blast">y </span>
+          <span class="blast">P</span>
+          <span class="blast">o</span>
+          <span class="blast">r</span>
+          <span class="blast">t</span>
+          <span class="blast">f</span>
+          <span class="blast">o</span>
+          <span class="blast">l</span>
+          <span class="blast">i</span>
+          <span class="blast">o</span> -->
         </h2>
       </div>
 
@@ -187,7 +184,7 @@
 
             <span class="base"></span>
 
-            <span class="text"> Contact me! </span>
+            <span class="text" onclick="clickBtnContact()" > Contact me! </span>
           </div>
         </a>
       </div>
@@ -197,7 +194,7 @@
 
     <!-- magical wall section -->
 
-    <div id="home-magicwall" class="fake-magicwall">
+    <div id="home-magicwall" data-load="home-magicwall" class="fake-magicwall js-way">
       <ul>
         <li>
           <div class="magic-wall_item lazyload">
@@ -328,10 +325,10 @@
     </div>
     <!-- this is the third part the about me section -->
 
-    <section id="section-about">
+    <section id="section-about" data-load="about" class="section-about js-way">
       <div class="text-zone3">
         <div id="header">
-          <h2 class="header-title">Me, Myself and I</h2>
+          <h2 class="header-title" data-splitting>Me, Myself and I</h2>
         </div>
 
         <p class="header-content">
@@ -406,7 +403,7 @@
       </div>
     </section>
     <!-- the about section ends here -->
-    <section id="section-blog" class="section-blog">
+    <section id="section-blog" data-load="blog" class="section-blog js-way">
       <div class="fake-big-2">Blog</div>
     
       <div class="blog-articles">
@@ -593,12 +590,12 @@
       </div>
     </section>
     <!-- Contact me section -->
-    <div class="contact-section contact-wrapper">
+    <section id="section-contact" data-load="contact" class="contact-section contact-wrapper js-way">
       <!-- <div class="fake-big">@</div> -->
       <form class="contact-form">
         <div class="contact-heading">
           <div id="header">
-            <h2>Contact me</h2>
+            <h2 data-splitting>Contact me</h2>
           </div>
           <p>I’m interested in freelance opportunities – especially ambitious or large projects. However, if you have other request or question, don’t hesitate to use the form.</p>
         </div>
@@ -627,7 +624,7 @@
   
               <span class="base"></span>
   
-              <span class="text"> Send Message </span>
+              <span class="text" id="sendMessager"> Send Message </span>
             </div>
           </button>
         </div>
@@ -645,11 +642,11 @@
           <span>@: ducdm.aptech@gmail.com</span>
         </div>
       </div>
-    </div>
+    </section>
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 
     <script src="./jquery.tagcanvas.js"></script>
-
+    <script src="./waypoints.js"></script>
     <script type="text/javascript" src="./index.js"></script>
     <script src="./app-home.js"></script>
     <script>Splitting();</script>
